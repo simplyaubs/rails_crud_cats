@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: rails_crud_cats_development
+
+test:
+  <<: *default
+  database: rails_crud_cats_test
