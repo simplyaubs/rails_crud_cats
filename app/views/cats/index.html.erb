@@ -15,7 +15,7 @@
 <% @cats.each do |cat| %>
 <ul>
 <li>
-  <%= cat.name %>, <%= cat.color %>
+  <%= link_to "#{cat.name}", cat_path(cat) %>, <%= cat.color %>
 </li>
 </ul>
 <% end %>

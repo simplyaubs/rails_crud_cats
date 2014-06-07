@@ -14,6 +14,21 @@ class CatsController < ApplicationController
     end
   end
 
+  def show
+    @cat = Cat.find(params[:id])
+  end
+
+  def edit
+    @cat = Cat.find(params[:id])
+  end
+
+  def update
+    @cat = Cat.find(params[:id])
+    @cat.update_attributes!(cat_params)
+
+    redirect_to cats_path(@cat)
+  end
+
   private
   def cat_params
     params.require(:cat).permit(:name, :color)
