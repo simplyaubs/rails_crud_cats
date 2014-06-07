@@ -29,6 +29,12 @@ class CatsController < ApplicationController
     redirect_to cats_path(@cat)
   end
 
+  def destroy
+    @cat = Cat.find(params[:id]).delete
+
+    redirect_to cats_path
+  end
+
   private
   def cat_params
     params.require(:cat).permit(:name, :color)
